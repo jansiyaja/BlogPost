@@ -1,8 +1,9 @@
-export interface IBlogPost {
-    id: string;
+import { Schema } from "mongoose";
+
+export interface IBlogPost extends Document {
     title: string;
     content: string;
-    authorId: string;  // Reference to the User
+    authorId: Schema.Types.ObjectId;  // Reference to the User
     createdAt: Date;
     updatedAt: Date;
   }
